@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>iFrame test</title>
+    <title>iFrame Child</title>
 </head>
 <body>
     <div>
@@ -4244,10 +4244,13 @@
     </div>
 
     <script type="text/javascript">
-        window.addEventListener('load', function() {
+        function createMessage() {
             parent.postMessage(document.body.scrollHeight, '*');
             console.log('iframe log', document.body.scrollHeight);
-        });
+        }
+        window.addEventListener('load', createMessage);
+        window.addEventListener('resize', createMessage)
+
     </script>
 </body>
 </html>

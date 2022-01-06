@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iFrame Parent</title>
+</head>
+<body>
+    <div>
+        <h1>This is the parent</h1>
+    </div>
+    <div style="width: 100%; height: 100%;" id="my-iframe">
+        <iframe
+                style="width: 100%; height: 100%;"
+                src="https://angeltrevinov.github.io/iFrame-test/"
+                frameborder="0"
+        ></iframe>
+    </div>
+
+    <script type="text/javascript">
+        let iframe = document.querySelector("#my-iframe");
+
+        window.addEventListener('message', function (e) {
+            let message = e.data;
+            iframe.style.height = message + 115 + 'px';
+        });
+    </script>
+</body>
+</html>
