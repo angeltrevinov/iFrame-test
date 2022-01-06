@@ -19,6 +19,7 @@
     <script type="text/javascript">
         let iframe = document.querySelector("#my-iframe");
 
+        // grab the send message
         window.addEventListener('message', function (e) {
             let message = e.data;
             iframe.style.height = message + 115 + 'px';

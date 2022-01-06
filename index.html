@@ -4244,8 +4244,20 @@
     </div>
 
     <script type="text/javascript">
+        /*
+        * This is the code that helps send the height of the
+        * iframe to the parent. It's going to send the message
+        * when the page loads and reloads
+        * */
         function createMessage() {
+            /*
+                Sends the message to the parent
+                '*' change to https://www.piscessportfishing.com/advanced-booking for security
+                Read more: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+             */
             parent.postMessage(document.body.scrollHeight, '*');
+
+            // this line was just for testing
             console.log('iframe log', document.body.scrollHeight);
         }
         window.addEventListener('load', createMessage);
